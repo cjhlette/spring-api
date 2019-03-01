@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(name = "product", fallback = FeignProductRemoteServiceFallbackImpl.class)
 public interface FeignProductRemoteService {
 
-    @RequestMapping(path = "/products/{productId}")
+    @RequestMapping(path = "http://product/products/{productId}")
     String getProductInfo(@PathVariable("productId") String productId);
 
 }
